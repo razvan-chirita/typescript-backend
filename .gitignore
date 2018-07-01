@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-uglified/
+coverage/
+cache/*.png
+cache/*.jpg
+.nyc_output/
+*.log
+.idea
