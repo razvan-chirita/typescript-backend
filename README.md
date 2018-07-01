@@ -5,7 +5,7 @@
 Endpoint urls/examples:
  - `/image/test.jpg`: gets the image with the default resolution
  - `/image/test.jpg?size=100x200`: gets the image with the specified resolution (currently not working)
- - `/status`: shows the service status
+ - `/status`: shows the service status (cache hit/cache miss/requested image missing)
 
 How to start:
  - clone or download
@@ -24,6 +24,7 @@ How to start:
 ### Todos
 
   - Fixes
+  - Security (restrict to image file requests)
   - Use [image-size](https://www.npmjs.com/package/image-size) to calculate the original image size
 
 # Requires
