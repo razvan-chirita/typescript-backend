@@ -23,7 +23,7 @@ Endpoint urls/examples:
 
 # Requires
 
-Apps and tutorials
+Apps and installation tutorials
  - Visual Studio Code (or other editor)
  - npm/node
  - [node-gyp](https://github.com/nodejs/node-gyp)
