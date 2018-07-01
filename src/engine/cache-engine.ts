@@ -6,10 +6,13 @@ var fs = require('fs');
 //   Image = Canvas.Image,
 //   canvas = new Canvas(200, 200),
 //   ctx = canvas.getContext('2d');
+var resizeImage = require('resize-image');
 var base_path = __dirname + '/../../images/';
 var cache: CachedImage[] = [];
-var stats: any;
-var resizeImage = require('resize-image');
+
+export function clearCache() {
+  cache = [];
+}
 
 export function getFile(name: string, resolution: string, resolved: any) {
   let image: CachedImage = null;
@@ -110,7 +113,13 @@ export function getScaledFileVersion(cacheEntry: CachedImage, resolution: string
       }
 
       console.log(
-        '[gSFV]: image ' + cacheEntry.name + ' was ' + (cached_image == null ? 'not ' : '') + 'found in the file system (res: ' + resolution + ').'
+        '[gSFV]: image ' +
+          cacheEntry.name +
+          ' was ' +
+          (cached_image == null ? 'not ' : '') +
+          'found in the file system (res: ' +
+          resolution +
+          ').'
       );
 
       // if it was not found, use resize-image to calculate the resized image (this method seems more like a hack than actual resize)
@@ -121,7 +130,7 @@ export function getScaledFileVersion(cacheEntry: CachedImage, resolution: string
         // var res = ctx.drawImage(img, 0, 0, img.width / 4, img.height / 4);
         // console.log(res);
 
-        var img = new Image;
+        var img = new Image();
         img.onload = function() {
           var data = resizeImage.resize(img, resolutionX, resolutionY, getExtensionObject(cacheEntry.extension));
 
@@ -158,17 +167,26 @@ export function getScaledFileVersion(cacheEntry: CachedImage, resolution: string
 }
 
 export function getExtension(path: string): string {
-  return 'JPEG';
+  const parts: string[] = path.split('.');
+  return parts[parts.length - 1];
 }
 
 export function getExtensionObject(extension: string): any {
-  return resizeImage.JPEG;
+  switch (extension) {
+    case 'JPEG':
+      return resizeImage.JPEG;
+
+    default:
+      return resizeImage.JPEG;
+  }
 }
 
 export function getResolutionX(resolution: string): number {
-  return 200;
+  const parts: string[] = resolution.toLowerCase().split('x');
+  return parseInt(parts[0]);
 }
 
 export function getResolutionY(resolution: string): number {
-  return 100;
+  const parts: string[] = resolution.toLowerCase().split('x');
+  return parseInt(parts[1]);
 }

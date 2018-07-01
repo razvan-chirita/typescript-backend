@@ -5,8 +5,6 @@
 Endpoint urls/examples:
  - `/image/test.jpg`: gets the image with the default resolution
  - `/image/test.jpg?size=100x200`: gets the image with the specified resolution (currently not working)
- - `/image-html/test.jpg?size=100x200`: gets the image with the default resolution as a webpage
- - `/image-html/test.jpg?size=100x200`: gets the image with the specified resolution (currently not working)
  - `/status`: shows the service status
 
 ## Known issues

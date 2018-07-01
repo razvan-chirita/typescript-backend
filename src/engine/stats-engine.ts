@@ -14,7 +14,10 @@ export function fileMiss() {
   stats.fileMisses++;
 }
 
-
-export function getStats() {
+export function getStats(): Stats {
   return stats;
+}
+
+export function resetStats() {
+  stats = new Stats();
 }
