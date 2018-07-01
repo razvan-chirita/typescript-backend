@@ -7,6 +7,13 @@ Endpoint urls/examples:
  - `/image/test.jpg?size=100x200`: gets the image with the specified resolution (currently not working)
  - `/status`: shows the service status
 
+How to start:
+ - clone or download
+ - install required third party (at the end)
+ - `npm install`: instaleaza 
+ - `npm run test`: porneste testele
+ - `npm run start`: porneste aplicatia local pe portul 8081
+
 ## Known issues
 
 ### Problems
