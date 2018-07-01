@@ -9,10 +9,10 @@ Endpoint urls/examples:
 
 How to start:
  - clone or download
- - install required third party (at the end)
- - `npm install`: instaleaza 
- - `npm run test`: porneste testele
- - `npm run start`: porneste aplicatia local pe portul 8081
+ - install required third party (see at the end of the readme)
+ - `npm install`: installs required npm packages
+ - `npm run test`: runs tests
+ - `npm run start`: starts app on localhost on port 8081
 
 ## Known issues
 
